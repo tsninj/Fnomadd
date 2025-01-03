@@ -1,23 +1,3 @@
-:root {
-    --bg-color: #FDFBF7;
-    --bg-color-2: rgba(217, 217, 217, 0.15);
-    --bg-color-footer: #EFF0F2;
-    --text-color: #111827;
-    --header-bg-color: #F9F6F0;
-    --secondary-text-color: #6D7280;
-    --third-text-color: #787878;
-    --fourth-text-color: #4D4D4D;
-    --footer-text-color: #484848;
-    --highlight-color: #050505;
-    --font-primary: Arial, sans-serif;
-    --menu-height: 20rem;
-    --button-color: #FCEDE8;
-}
-
-html {
-    font-size: 25px;
-}
-
 body {
     font-family: var(--font-primary);
     margin: 0;
@@ -32,16 +12,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-}
-
-nav {
-    background: #FCEDE8;
-    height: 3rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2.5rem;
 }
 
 label.logo {
@@ -112,7 +82,7 @@ header nav ul li a:hover {
 
 .menu {
     padding: 3rem 2rem;
-    background-image: url('Home/NomaddBK.jpg');
+    background-image: url('../images/Publishing/NomaddBK.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -212,7 +182,6 @@ header nav ul li a:hover {
     padding: 0.2rem 2rem;
 }
 
-/* Чичирч буй анимаци */
 @keyframes shake {
     0%, 100% {
       transform: translateX(0);
@@ -235,80 +204,14 @@ header nav ul li a:hover {
     border-radius: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    animation: shake 1.5s infinite; /* Чичирч буй анимаци */
-    transition: transform 0.3s ease; /* Томрох үед зөөлөн шилжилт */
+    animation: shake 1.5s infinite; 
+    transition: transform 0.3s ease; 
   }
   
-  /* Томрох үед */
   .Logos img.active {
-    transform: scale(1.5); /* Томрох */
+    transform: scale(1.5);
   }
 
-
-footer {
-    background-color: var(--bg-color-footer); 
-    color: var(--footer-text-color); 
-    padding-bottom: 1.5rem;
-}
-
-.footer-contact {
-    padding: 1rem 3rem 2rem ; 
-
-    display: grid;
-    grid-template-columns: 35% 17% 18% 25%;
-    gap: 1.2rem; 
-}
-
-.footer-contact ul {
-    list-style-type: none;
-    padding: 0;
-}
-.footer-contact h3 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-style: italic;
-}
-.footer-contact h4 {
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.footer-contact li {
-    margin-bottom: 0.5rem; 
-}
-
-.footer-contact a {
-    color: var(--footer-text-color) ;
-    text-decoration: none; 
-    transition: color 0.3s ease;
-    font-size: 0.7rem;
-    padding-right: 0;
-}
-
-.footer-contact a:hover {
-    color: var(--highlight-color); 
-    font-weight: bolder;
-}
-
-.footer-contact img {
-    width: 1rem;
-    height: 1rem;
-    padding: 0rem 1rem 0rem 0rem;
- }
-
-.footer-area {
-    padding: 1rem 3rem ;
-    border-top: 1px solid #444; 
-    font-size: 0.7rem;
-}
-
-.footer-area p {
-
-    color: var(--footer-text-color); 
-}
 @media (max-width: 768px) {
     header nav ul {
         display: none;
