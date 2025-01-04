@@ -16,6 +16,7 @@ class Book {
                   <h1>${this.title}</h1>
                   <h2>${this.author}</h2>
                   <p class="price">${this.price}</p>
+                  <button class="add-to-cart">Сагсанд нэмэх</button>
               </div>
           </article>
       `;
