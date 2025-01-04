@@ -22,25 +22,41 @@ class Book {
       `;
   }
 }
+const booksData = [
+  { id: 1, title: "Анна", author: "Эми Одел", price: "39,900₮", category: "biography", image: "../images/Publishing/anna.png" },
+  { id: 2, title: "Аналог эргэн ирсэн нь", author: "Жаред Даймонд", price: "39,900₮", category: "history", image: "../images/Publishing/analog.png" },
+  { id: 3, title: "Үүсгэн байгуулагчид", author: "Жимми Сонни", price: "39,900₮", category: "business", image: "../images/Publishing/biznes.png" },
+  { id: 4, title: "Цаг төлөвлөгч дэвтэр", author: "Кел Ньюпорт", price: "34,900₮", category: "self-help", image: "../images/Publishing/timeplanner.png" },
+  { id: 5, title: "Бүтээ", author: "Тони Фаделл", price: "49,900₮", category: "business", image: "../images/Publishing/butee.png" },
+  { id: 6, title: "Headspace", author: "Энди Паддиком", price: "29,900₮", category: "self-help", image: "../images/Publishing/headspace.png" },
+  { id: 7, title: "Launch", author: "Ховард Шульц", price: "29,900₮", category: "business", image: "../images/Publishing/launch.png" },
+  { id: 8, title: "Бизнесийг энгийнээр", author: "Доналд Миллер", price: "29,900₮", category: "business", image: "../images/Publishing/biznes.png" },
+  { id: 9, title: "Патагониа", author: "Ивон Шүйнард", price: "49,900₮", category: "biography", image: "../images/Publishing/screen1.png" },
+  { id: 10, title: "Стори Бренд Бүтээх нь", author: "Доналд Миллер", price: "29,900₮", category: "business", image: "../images/Publishing/storybrand.png" },
+  { id: 11, title: "Буу Нян Ган", author: "Жаред Даймонд", price: "49,900₮", category: "history", image: "../images/Publishing/BuuNyanGan.png" },
+  { id: 12, title: "Урагшаа", author: "Ховард Шульц", price: "39,900₮", category: "biography", image: "../images/Publishing/uragshaa.png" }
+];
 
-// Fetch JSON
 const booksContainer = document.getElementById("books-container");
 
-const fetchBooksData = async () => {
-  try {
-    const response = await fetch("../json/Publishing.json");
-    if (!response.ok) {
-      throw new Error(`Books data oldsongui ${response.statusText}`);
-    }
-    const booksData = await response.json();
-    renderBooks(booksData);
-    initFilters(booksData);
-    applyFilterURL(booksData);
+// Fetch JSON
+// const booksContainer = document.getElementById("books-container");
+// const URLd = "../json/Publishing.json";
+// const fetchBooksData = async () => {
+//   try {
+//     const response = await fetch(URLd);
+//     if (!response.ok) {
+//       throw new Error(`Books data oldsongui ${response.statusText}`);
+//     }
+//     const booksData = await response.json();
+//     renderBooks(booksData);
+//     initFilters(booksData);
+//     applyFilterURL(booksData);
 
-  } catch (error) {
-    console.error(error);
-  }
-};
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
 const renderBooks = (books) => {
   booksContainer.innerHTML = "";
@@ -66,9 +82,8 @@ const initFilters = (booksData) => {
     const filteredBooks = booksData.filter(book => {
       const matchesSearch = book.title.toLowerCase().includes(searchValue);
       const matchesPrice = (priceFilter === "all") ||
-        (priceFilter === "low" && parseInt(book.price.replace(",", "")) <= 35000) ||
-        (priceFilter === "high" && parseInt(book.price.replace(",", "")) > 35000);
-
+        (priceFilter === "low" && parseInt(book.price.replace(/,|₮/g, "")) <= 35000) ||
+        (priceFilter === "high" && parseInt(book.price.replace(/,|₮/g, "")) > 35000);
       return matchesSearch && matchesPrice;
     });
     updateURL(searchValue, priceFilter);
@@ -115,4 +130,7 @@ const applyFiltersURL = (booksData) => {
   renderBooks(filteredBooks);
 };
 
-fetchBooksData();
+// fetchBooksData();
+renderBooks(booksData);
+initFilters(booksData);
+applyFiltersURL(booksData);
