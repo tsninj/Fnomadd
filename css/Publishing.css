@@ -2,7 +2,7 @@
 
     --search-color: #f39c12;
     --search-bar: #ccc;
-    --filter-color: #f4f4f4
+    --filter-color: #f4f4f4;
 }
 
 .menu img {
@@ -65,6 +65,7 @@
     background-color: var(--filter-color);
     margin-top: 1rem;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .filter-section label {
@@ -81,7 +82,9 @@
     height: 1.5rem;
     margin-top: 0.5rem;
 }
-
+.filter-section.visible {
+    display: block;
+}
 .cakes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

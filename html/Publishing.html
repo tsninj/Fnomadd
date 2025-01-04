@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <title>Publishing</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -56,107 +57,9 @@
             </select>
         </div>
 
-        <div class="cakes">
-            <article class="cakes1">
-                <img src="../images/Publishing/anna.png" alt="Anna">
-                <div>
-                    <h1>Анна</h1>
-                    <h2>Эми Одел</h2>
-                    <p class="price">39,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/analog.png" alt="Analog">
-                <div>
-                    <h1>Аналог эргэн ирсэн нь</h1>
-                    <h2>Жаред Даймонд</h2>
-                    <p class="price">39,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/biznes.png" alt="Biznes">
-                <div>
-                    <h1>Үүсгэн байгуулагчид</h1>
-                    <h2>Жимми Сонни</h2>
-                    <p class="price">39,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/timeplanner.png" alt="Time">
-                <div>
-                    <h1>Цаг төлөвлөгч дэвтэр</h1>
-                    <h2>Кел Ньюпорт</h2>
-                    <p class="price">34,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/butee.png" alt="Butee">
-                <div>
-                    <h1>Бүтээ</h1>
-                    <h2>Тони Фаделл</h2>
-                    <p class="price">49,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/headspace.png" alt="Head space">
-                <div>
-                    <h1>Headspace</h1>
-                    <h2>Энди Паддиком</h2>
-                    <p class="price">29,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/launch.png" alt="Launch">
-                <div>
-                    <h1>Launch</h1>
-                    <h2>Ховард Шульц</h2>
-                    <p class="price">29,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/biznes.png" alt="Bizness">
-                <div>
-                    <h1>Бизнесийг энгийнээр</h1>
-                    <h2>Доналд Миллер</h2>
-                    <p class="price">29,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/screen1.png" alt="Patagonia">
-                <div>
-                    <h1>Патагониа</h1>
-                    <h2>Ивон Шүйнард</h2>
-                    <p class="price">49,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/storybrand.png" alt="Story">
-                <div>
-                    <h1>Стори Бренд Бүтээх нь</h1>
-                    <h2>Доналд Миллер</h2>
-                    <p class="price">29,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/BuuNyanGan.png" alt="BuuNyanGan">
-                <div>
-                    <h1>Буу Нян Ган</h1>
-                    <h2>Жаред Даймонд</h2>
-                    <p class="price">49,900₮</p>
-                </div>
-            </article>
-            <article class="cakes1">
-                <img src="../images/Publishing/uragshaa.png" alt="Anna">
-                <div>
-                    <h1>Урагшаа</h1>
-                    <h2>Ховард Шульц</h2>
-                    <p class="price">39,900₮</p>
-                </div>
-            </article>
-            
-        </div>
-
+        <div class="cakes" id="books-container"></div>
     </section>
+    <script src="../js/Publishing.js" defer></script>
     <script>
         document.getElementById("search-bar").addEventListener("input", function (event) {
             const query = event.target.value.toLowerCase(); // Хайх текстийг жижиг үсгээр хувиргах
@@ -171,6 +74,14 @@
                 } else {
                     article.style.display = "none";
                 }
+            });
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterIcon = document.getElementById("filter-icon");
+            const filterSection = document.getElementById("filter-section");
+
+            filterIcon.addEventListener("click", () => {
+                filterSection.classList.toggle("visible");
             });
         });
     </script>
@@ -212,8 +123,10 @@
                 <li><a href="mailto:m.bluth@example.com">Email: company@email.com</a></li>
                 <li><a href="https://www.google.com/maps"> Location: 100 Smart Street, LA, USA</a></li>
                 <li><a href="https://www.facebook.com/"><img src="../images/main/fb.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/"><img src="../images/main/ig-removebg-preview.png" alt="Instagram"></a>
-                <a href="https://www.twitter.com"><img src="../images/main/x.png" alt="X"></a></li>
+                    <a href="https://www.instagram.com/"><img src="../images/main/ig-removebg-preview.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.twitter.com"><img src="../images/main/x.png" alt="X"></a>
+                </li>
             </ul>
         </div>
         <div class="footer-area">
