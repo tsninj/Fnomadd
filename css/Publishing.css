@@ -62,18 +62,36 @@
     display: none;
     /* Эхэндээ шүүлтүүрийг нууцлах */
     padding: 1rem;
-    background-color: var(--filter-color);
     margin-top: 1rem;
-    border-radius: 5px;
     transition: all 0.3s ease-in-out;
+
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 88%;
+    margin: 16px auto;
+    box-shadow: 0 0 5px rgba(252, 237, 232, 0.8);
 }
 
 .filter-section label {
     margin-right: 0.5rem;
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .filter-section select {
     margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(252, 237, 232, 0.8);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #filter-icon {
@@ -85,6 +103,22 @@
 .filter-section.visible {
     display: block;
 }
+
+.filter-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.filter-section select:hover,
+.filter-section select:focus {
+    border-color: #FCEDE8;
+    box-shadow: 0 0 5px rgba(252, 237, 232, 0.8);
+    outline: none;
+}
+
 .cakes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
