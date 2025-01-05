@@ -1,59 +1,23 @@
-body {
-    font-family: var(--font-primary);
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    overflow-x: hidden;
+:root {
+
+    --search-color: #f39c12;
+    --search-bar: #ccc;
+    --filter-color: #f4f4f4;
 }
 
-header {
-    
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+.menu img {
+    width: 100%;
+    height: auto;
 }
 
-label.logo {
-    color: #4B5563;
-    font-size: 1.5rem;
-    font-weight: semi;
-    font-family: 'Birthstone', cursive;
-}
-
-header nav ul {
-    display: flex;
-    align-items: center;
-    margin: 0 1rem;
-}
-
-header nav ul li {
-    margin: 0 1rem;
-    list-style: none;
-  
-}
-
-header nav ul li a {
-    color: #4B5563;
-    font-size: 0.8rem;
-    padding: 0.3rem 0.5rem;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    color: #fff;
-    transition: 0.3s;
-}
-
-.grid{
-    display: grid;
-    grid-template-columns: 60% 40%; 
-    align-items: flex-start;
+.byluu-heseg {
+    background-color: var(--bg-color-1);
+    padding-top: 1rem;
 }
 
 .Sentence {
     display: flex;
-    gap: 63%;
+    gap: 62%;
 }
 
 .Sentence p {
@@ -83,7 +47,7 @@ header nav ul li a:hover {
 
 .Sanal {
     background-color: white
-    padding-top: 1rem;
+    padding-top: -3rem;
 }
 
 .Sanal h4 { 
@@ -91,185 +55,118 @@ header nav ul li a:hover {
     font-size: 1.5rem;
 }
 
-.Bolgoh {
-    font-size: 0.8rem; 
+.cakes {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 2.5rem; 
-    padding: 0rem 0.5rem;
-    justify-items: center; 
-    padding-left: -2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.Bolgoh article {
-    display: flex;
-    flex-direction: column;
-    align-items: left  ; 
-    padding: 1rem; 
-    
+.cakes article {
+    background: #FCEDE8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.Bolgoh article img {
-    height: 230px;
-    width: 170px;
-    
-}
-
-.Bolgoh article h3 {
-    font-weight: bold; 
-    padding-top: 0.8rem;
-    color: var(--fourth                       -text-color);
-    font-weight: normal;
-    margin: 0.5rem 0;
-    font-size: 20px;
-    color: #6D7280;
-
-}
-
-.a h3 {
-    color: #050505;
-}
-
-.Bolgoh p {
-    color: var(--fourth-text-color);
-    font-weight: bold; 
-    font-weight: medium;
-    margin-top: 0;
-    transform: translateY(-15px);
-}
-
-.Bolgoh img {
-    width: 80%; 
+.cakes article img {
+    width: 100%;
+    max-width: 9rem;
     height: auto;
-    border-radius: 0rem;
-    
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20%; 
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
 }
 
-.Bolgoh .category {
-    transform: translateY(-35px);
+.cakes1 {
+    border: 2px solid transparent;
+    transition: border 0.3s;
+  }
+  
+.cakes1.selected {
+    border: 2px solid #007bff; /* Хөх өнгийн хүрээ */
+    background-color: #FCEDE8; /* Цайвар хөх дэвсгэр */
+  }
+
+.cakes1 h1 {
+    padding-left: 0.8rem;
+    margin: 0.5rem 0;
+    color: var(--fourth-text-color);
+    font-size: 1rem;
+    text-align: left;
 }
 
-.Bolgoh h5 {
-    margin-top: -1%;
+.cakes1 h2 {
+    padding-left: 0.8rem;
+    margin: 0.2rem 0;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: lighter;
 }
 
-.Bolgoh article:hover {
-    transform: scale(1.02); 
-    box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3); 
-    
+.cakes1 .price {
+    margin-top: -35px;
+    font-size: 1.1rem;
+    color: var(--header-color);
+    font-weight: bold;
+    text-align: right;
+
 }
 
-.Bolgoh .a.active {
-    border-color: #007bff; /* Идэвхтэй төлөвийн хүрээний өнгө */
-    box-shadow: 0 4px 12px rgba(255, 163, 181, 0.5); /* Цэнхэр сүүдэр */
-    background-color: #f9f9ff; /* Зөөлөн цэнхэр өнгө */
+
+
+.cakes article:hover::after {
+    opacity: 0.9;
 }
 
-.Bolgoh .price {
-   margin-top: -110px;
-   margin-left: 200px;
-   font-size: 24px;
+.cakes article:hover .add-to-cart {
+    display: inline-block;
+    z-index: 2; 
 }
 
-.category {
-    padding-top: 20px;
-}
-
-.a {
-    padding-bottom: 5rem;
-    background-color: #FCEDE8;
-}
-
-.PM {
+.quantity-control {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.PM ul {
     list-style: none;
-    display: flex;
     gap: 10px;
     padding: 0;
     margin: 0;
 }
 
-.PM ul li a {
+.quantity-control button {
     text-decoration: none;
     padding: 5px 10px;
     font-size: 20px;
+    background-color: transparent;
+    border-color: transparent;
 }
 
-.PM ul li a:hover {
+.quantity-control button:hover {
     background-color: #eaeaea; /* Хулганаар дээр нь байрлахад өнгийг өөрчлөх */
 }
 
+
+@media (max-width: 1068px) {
+    .cakes {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .search-container input {
+        margin-left: 4rem;
+}
+}
 @media (max-width: 768px) {
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        background: #FCEDE8;
-        position: absolute;
-        top: 3rem;
-        right: 0;
-        width: 100%;
-        padding: 0.5rem 0;
+    .cakes {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
-
-    header nav ul li {
-        text-align: center;
-        margin: 0.5rem 0;
-        padding-right: 1.2rem;
-
-    }
-
-    header nav ul.show {
-        display: flex;
-    }
-
-    .checkbtn {
-        display: block;
-    }
-
-    .icons {
-        display: none;
-    }
+    .search-container input {
+    margin-left: 3rem;
 }
-@media (max-width: 1050px) {
-  label.logo {
-    padding-left: 1.2rem;
-  }
-  header nav ul li a {
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 890px) {
-  label.logo {
-    font-size: 1rem;
-  }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 3rem;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-  }
-  header nav ul li {
-    display: block;
-    margin: 2rem 0;
-    line-height: 1.5rem;
-  }
-  header nav ul li a {
-    font-size: 1rem;
-  }
-  
-  .icons {
-    display: none;
-}
+
 }
