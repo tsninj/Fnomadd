@@ -45,31 +45,8 @@
         
     <div class="cakes" id="books-container"></div>
     <script src="../js/Sags.js" defer></script>
-    <script>
-        document.getElementById("search-bar").addEventListener("input", function (event) {
-            const query = event.target.value.toLowerCase(); // Хайх текстийг жижиг үсгээр хувиргах
-            const articles = document.querySelectorAll(".cakes article"); // Бүх номнуудыг олох
-
-            articles.forEach(function (article) {
-                const bookTitle = article.querySelector("h1").textContent.toLowerCase(); // Номны нэрийг жижиг үсгээр авах
-
-                // Хэрэв номны нэр хайлттай тохирч байвал харуулж, тохирохгүй бол нуух
-                if (bookTitle.includes(query)) {
-                    article.style.display = "block";
-                } else {
-                    article.style.display = "none";
-                }
-            });
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-            const filterIcon = document.getElementById("filter-icon");
-            const filterSection = document.getElementById("filter-section");
-
-            filterIcon.addEventListener("click", () => {
-                filterSection.classList.toggle("visible");
-            });
-        });
-    </script>
+        <!-- <script type="module" src="../js/cart-page.js"></script> -->
+s
     <footer>
         <div class="footer-contact">
             <ul>

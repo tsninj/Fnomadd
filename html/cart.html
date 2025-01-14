@@ -7,25 +7,9 @@
     <meta name="description" content="Publishing">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/Publishing.css">
     <link rel="stylesheet" href="../css/main.css">
-    <title>Publishing</title>
-    <style>
-        .notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    font-family: Arial, sans-serif;
-    animation: fadeInOut 3s ease-in-out;
-}
-
-    </style>
+    <link rel="stylesheet" href="../css/Sags.css">
+    <title>Cart</title>
 </head>
 
 <body>
@@ -35,7 +19,7 @@
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul>
                 <li><a href="#">Nomadd Lifestyle</a></li>
-                <li><a href="#">Publishing</a></li>
+                <li><a href="../html/Publishing.html">Publishing</a></li>
                 <li><a href="#">Roasting</a></li>
                 <li><a href="#">CoffeeNamu</a></li>
             </ul>
@@ -44,65 +28,24 @@
             </ul>
             <div class="icons">
 
-                <a href="../html/cart.html">
-                    <span id="total-price"></span>
-                    <img src="../images/main/bag.png" alt="Bag" ></a>
+                <a href="../html/cart.html"><img src="../images/main/bag.png" alt="Bag" ></a>
                 <a href="#"><img src="../images/main/user.png" alt="User"></a>
             </div>
 
         </nav>
     </header>
+    <section class="Sanal">
+        <div class="Sentence">
+         <h4 style="padding-top: 2rem; padding-bottom: 2rem; color: var(--fourth-text-color); justify-self: left; margin-left: 2rem;">Сагсалсан зүйлс:<h4>
+         <button id="total-price" type="button">₮</button>
+         <div id="total-price"></div>
 
-    <section class="menu">
-        <img src="../images/Publishing/PublishBK3.jpg" alt="Nuur zurag">
-    </section>
-
-
-    <section class="byluu-heseg">
-        <div class="search-container">
-            <h2 href="#">← Номнууд</h2>
-            <input type="text" id="search-bar" placeholder="Search " />
-            <img id="filter-icon" src="../images/Publishing/blakfilter.png" alt="Filter Icon" />
         </div>
-
-        <div id="filter-section" class="filter-section">
-            <h3>Үнийн шүүлтүүр</h3>
-        
-            <select id="price-filter">
-                <option value="all">Бүх үнэ</option>
-                <option value="low">Доод үнэ</option>
-                <option value="high">Өндөр үнэ</option>
-            </select>
-        </div>
-
-        <div class="cakes" id="books-container"></div>
     </section>
-    <script type="module" src="../js/app.js"></script>
-    <script>
-        document.getElementById("search-bar").addEventListener("input", function (event) {
-            const query = event.target.value.toLowerCase(); // Хайх текстийг жижиг үсгээр хувиргах
-            const articles = document.querySelectorAll(".cakes article"); // Бүх номнуудыг олох
+    <div class="cakes" id="books-container"></div>
+    <script type="module" src="../js/cart-page.js"></script>
 
-            articles.forEach(function (article) {
-                const bookTitle = article.querySelector("h1").textContent.toLowerCase(); // Номны нэрийг жижиг үсгээр авах
 
-                // Хэрэв номны нэр хайлттай тохирч байвал харуулж, тохирохгүй бол нуух
-                if (bookTitle.includes(query)) {
-                    article.style.display = "block";
-                } else {
-                    article.style.display = "none";
-                }
-            });
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-            const filterIcon = document.getElementById("filter-icon");
-            const filterSection = document.getElementById("filter-section");
-
-            filterIcon.addEventListener("click", () => {
-                filterSection.classList.toggle("visible");
-            });
-        });
-    </script>
     <footer>
         <div class="footer-contact">
             <ul>
