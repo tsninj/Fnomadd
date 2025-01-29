@@ -2,7 +2,7 @@ import Cart from "./cart.js";
 import { fetchBooksData } from "./data.js";
 
 const cartContainer = document.getElementById("books-container");
-const totalPriceElement = document.getElementById("total-price");  // Fix: define totalPriceElement
+const totalPriceElement = document.getElementById("total-price");  
 const cart = new Cart();
 
 const loadCartState = () => {
@@ -18,20 +18,20 @@ const saveCartState = () => {
 
 const initializeCartPage = async () => {
     try {
-        const booksData = await fetchBooksData("../json/Publishing.json");
-        cartContainer.innerHTML = cart.render(booksData);  // Ensure this method exists in the Cart class
+        const booksData = await fetchBooksData("https://api.jsonbin.io/v3/b/6778065de41b4d34e46f656c");
+        cartContainer.innerHTML = cart.render(booksData); 
         displayTotalPrice(booksData);
     } catch (error) {
         console.error("Error loading books data", error);
     }
 };
 
+
 const displayTotalPrice = (booksData) => {
-    const totalPrice = cart.calculateTotalPrice(booksData);  // Ensure this method exists in the Cart class
+    const totalPrice = cart.calculateTotalPrice(booksData);  
     totalPriceElement.textContent = `${totalPrice.toLocaleString()}₮`;
 };
 
-// Event listener for cart interactions
 cartContainer.addEventListener("click", (event) => {
     const { target } = event;
     const id = parseInt(target.dataset.id, 10);
@@ -44,10 +44,9 @@ cartContainer.addEventListener("click", (event) => {
             cart.cart.delete(id);
         }
     }
-    saveCartState();  // Save updated cart state to localStorage
-    initializeCartPage();  // Re-render the cart page
+    saveCartState();  
+    initializeCartPage();  
 });
 
-// Initialize the cart state and page
 loadCartState();
 initializeCartPage();

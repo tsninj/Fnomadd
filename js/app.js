@@ -128,7 +128,7 @@ const setupAddToCartButtons = (booksData) => {
     buttons.forEach((button, index) => {
         button.addEventListener("click", () => {
             cart.addProduct(booksData[index].id);
-            saveCartState(); 
+             saveCartState(); 
             updateCartCount(); 
             calculateTotalPrice(booksData); 
             showNotification("Бүтээгдэхүүн сагсанд нэмэгдлээ!"); 
@@ -136,17 +136,24 @@ const setupAddToCartButtons = (booksData) => {
     });
 };
 
+
 const initializeApp = async () => {
     try {
-        const booksData = await fetchBooksData("../json/Publishing.json");
+        const booksData = await fetchBooksData("https://api.jsonbin.io/v3/b/6778065de41b4d34e46f656c");
+        
+        if (!booksData.length) {
+            console.warn("No books data available.");
+            return;
+        }
 
         renderBooks(booksData);  
         applyFiltersFromURL(booksData); 
         initializeFilters(booksData); 
         setupAddToCartButtons(booksData); 
         loadCartState(booksData); 
+
     } catch (error) {
-        console.error("Error initializing app:", error);
+        console.error("Failed to initialize app:", error);
     }
 };
 
