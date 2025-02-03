@@ -45,13 +45,13 @@
             <div class="icons">
 
                 <a href="../html/cart.html">
-                    <span id="total-price"></span>
                     <img src="../images/main/bag.png" alt="Bag" ></a>
                 <a href="#"><img src="../images/main/user.png" alt="User"></a>
             </div>
 
         </nav>
     </header>
+    <span id="total-price"></span>
 
     <section class="menu">
         <img src="../images/Publishing/PublishBK3.jpg" alt="Nuur zurag">
@@ -77,7 +77,11 @@
 
         <div class="cakes" id="books-container"></div>
     </section>
+
+    <book-list></book-list>
+    <cart-component></cart-component>
     <script type="module" src="../js/app.js"></script>
+    
     <script>
         document.getElementById("search-bar").addEventListener("input", function (event) {
             const query = event.target.value.toLowerCase(); // Хайх текстийг жижиг үсгээр хувиргах

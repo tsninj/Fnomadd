@@ -4,6 +4,9 @@
     --search-bar: #ccc;
     --filter-color: #f4f4f4;
 }
+cart-component {
+    display: none;
+}
 
 .menu img {
     width: 100%;

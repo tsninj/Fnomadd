@@ -1,3 +1,4 @@
+// cart.js module
 export default class Cart {
     constructor() {
         this.cart = new Map();

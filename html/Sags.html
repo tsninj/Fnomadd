@@ -39,14 +39,16 @@
     <section class="Sanal">
         <div class="Sentence">
          <h4 style="padding-top: 2rem; padding-bottom: 2rem; color: var(--fourth-text-color); justify-self: left; margin-left: 2rem;">Сагсалсан зүйлс:<h4>
-         <button type="button"><span>1000000</span>₮</button>
+            <button id="total-price" type="button">₮</button>
+            <div id="total-price"></div>
         </div>
     </section>   
         
     <div class="cakes" id="books-container"></div>
-    <script src="../js/Sags.js" defer></script>
+    <cart-component></cart-component>
+            <script type="module" src="../js/app-cart.js"></script>
         <!-- <script type="module" src="../js/cart-page.js"></script> -->
-s
+
     <footer>
         <div class="footer-contact">
             <ul>
