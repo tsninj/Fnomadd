@@ -60,7 +60,7 @@
     margin-left: 3rem;
 }
 
-.cakes {
+/* .cakes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
@@ -94,10 +94,10 @@
 }
 
 .cakes1.selected {
-    border: 2px solid #007bff;
-    /* Хөх өнгийн хүрээ */
-    background-color: #FCEDE8;
-    /* Цайвар хөх дэвсгэр */
+    border: 2px solid #007bff; 
+    // Хөх өнгийн хүрээ 
+    background-color: #FCEDE8; 
+    // Цайвар хөх дэвсгэр 
 }
 
 .cakes1 h1 {
@@ -124,14 +124,7 @@
     font-weight: bold;
     text-align: right;
 
-}
-
-.cart {
-    padding-top: 2rem;
-    color: var(--fourth-text-color);
-    justify-self: left;
-    margin-left: 3rem;
-}
+} 
 
 .cakes1:hover::after {
     opacity: 0.9;
@@ -143,7 +136,7 @@
 }
 
 
-.quantity-controls {
+ .quantity-controls {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,10 +155,14 @@
 
 .quantity-control button:hover {
     background-color: #eaeaea;
-    /* Хулганаар дээр нь байрлахад өнгийг өөрчлөх */
+}  */
+
+.cart {
+    padding-top: 2rem;
+    color: var(--fourth-text-color);
+    justify-self: left;
+    margin-left: 3rem;
 }
-
-
 @media (max-width: 1068px) {
     .cakes {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

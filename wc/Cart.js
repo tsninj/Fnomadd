@@ -1,6 +1,7 @@
 class CartComponent extends HTMLElement {
     constructor() {
         super();
+        this.attachShadow({ mode: 'open' });
         this.cart = new Map();
         this.booksData = [];
         this.loadCart();
@@ -22,13 +23,21 @@ class CartComponent extends HTMLElement {
 
     adoptedCallback() {
     }
-    
+
     render() {
         /*Сагсан дотор бүтээгдэхүүн байхгүй бол нийт үнийг 0 болон сагсан дотор бараа байхгүй байна гэж гаргана.
         */
         if (this.cart.size === 0) {
-            this.innerHTML = "<p>Сагс хоосон байна.</p>";
-            document.getElementById('total-price').textContent = "0₮";
+            this.shadowRoot.innerHTML = `
+                <style>
+                    .cakes { padding: 10px; font-family: Arial, sans-serif; }
+                    .empty { color: dark-gray; padding-bottom: 15rem ; padding-left:2rem}
+                </style>
+                <div class="cakes">
+                    <p class="empty">Сагс хоосон байна.</p>
+                    <p><span id="total-price"></span></p>
+                </div>
+            `;
             return;
         }
         /* Сагсан дотор байгаа номуудыг Id-ийн тусламжтайгаар рендерлэнэ.
@@ -59,24 +68,65 @@ class CartComponent extends HTMLElement {
         document.getElementById('total-price').textContent = `${this.totalPrice.toLocaleString()}₮`;
 
         cartHTML += '</div>';
-        this.innerHTML = cartHTML;
+
+        this.shadowRoot.innerHTML = `
+            <style>
+            .cakes {
+                display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 2rem; margin: 0 2.5rem; margin-bottom: 2rem;
+            }
+            .cakes article {
+                background: #FCEDE8; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;
+                padding: 1rem;  position: relative;  overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+            }
+            .cakes article img {
+                width: 100%;  max-width: 9rem;  height: auto;  margin-bottom: 0.5rem;  border-radius: 5px;  margin-top: 1rem;
+            }
+            .cakes1 {
+                border: 2px solid transparent;  transition: border 0.3s;
+            }
+            .cakes1.selected {
+                border: 2px solid #007bff;    /* Хөх өнгийн хүрээ */
+                background-color: #FCEDE8;    /* Цайвар хөх дэвсгэр */
+            }
+            .cakes1 h1 {
+                padding-left: 0.8rem; margin: 0.5rem 0; color: var(--fourth-text-color); font-size: 1rem;  text-align: left;
+            }
+            .cakes1 h2 {
+                padding-left: 0.8rem;  margin: 0.2rem 0;  color: var(--secondary-text-color);
+                font-size: 0.9rem; text-align: left; font-weight: lighter;
+            }
+            .cakes1 .price {
+                margin-top: -35px; font-size: 1.1rem;  color: var(--header-color);  font-weight: bold;  text-align: right;
+            }
+                .cart-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+                .quantity-controls button, .remove-item { cursor: pointer; }
+                .remove-item { color: red; border: none; background: none; }
+            .quantity-controls {  display: flex;  align-items: center; justify-content: center; gap: 10px; padding: 0; margin: 0;}
+
+            .quantity-controls button {  padding: 5px 10px;  font-size: 20px;  border: none;  cursor: pointer;
+            }
+            .quantity-controls button:hover { background-color: #eaeaea; /* Хулганаар дээр нь байрлахад өнгийг өөрчлөх */ }
+            </style>
+            ${cartHTML}
+        `;
 
         /*Бүтээгдэхүүн нэмэх товчлуур*/
-        this.querySelectorAll('.increase').forEach(button => {
+        this.shadowRoot.querySelectorAll('.increase').forEach(button => {
             button.addEventListener('click', (event) => {
                 this.addProduct(event.target.dataset.id);
             });
         });
 
         /*Бүтээгдэхүүн хасах товчлуур*/
-        this.querySelectorAll('.decrease').forEach(button => {
+        this.shadowRoot.querySelectorAll('.decrease').forEach(button => {
             button.addEventListener('click', (event) => {
                 this.removeProduct(event.target.dataset.id);
             });
         });
 
         /*Бүтээгдэүүн устгах товчлуур*/
-        this.querySelectorAll('.remove-item').forEach(button => {
+        this.shadowRoot.querySelectorAll('.remove-item').forEach(button => {
             button.addEventListener('click', (event) => {
                 const productId = event.target.dataset.id;
                 this.cart.delete(productId);
@@ -85,7 +135,6 @@ class CartComponent extends HTMLElement {
                 this.dispatchEvent(new CustomEvent('cart-updated', { detail: this.cart }));
             });
         });
-
     }
 
     /* Бүтээгдэхүүн нэмэх товчлуур буюу байгаа тоон дээрээс 1 нэмнэ.
@@ -136,19 +185,16 @@ class CartComponent extends HTMLElement {
     get totalPrice() {
         return this.calculateTotalPrice();
     }
-
     /*LocalStorage-аас сагсны бүтээгдэхүүнийг унших*/
     loadCart() {
         const savedCart = JSON.parse(localStorage.getItem('cart'));
         if (savedCart) {
             this.cart = new Map(savedCart);
         }
-
         // LocalStorage доторх хадгалсан өгөгдлөө устгах
         // localStorage.removeItem('cart');
         // console.log("Cart cleared!");
     }
-
     /*Сагсан дахь номны төлвийг хадгална. хэрэв сагсанд ном байхгүй бол устгах*/
     saveCart() {
         if (this.cart.size === 0) {
