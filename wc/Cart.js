@@ -71,12 +71,29 @@ class CartComponent extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
+            :host {
+                display: block;
+                padding: 15px;
+                border-radius: 8px;
+            /*    background-color: var(--bg-color);*/
+                color: var(--text-color);
+            }
+            :host-context(html.light-mode) {
+                --bg-color: #f9f9f9;
+                --text-color: #333;
+                --cart-color: #FCEDE8;
+            }
+            :host-context(html.dark-mode) {
+                    --bg-color: #1E1E1E;
+                    --text-color: #fff;
+                    --cart-color: #222;
+            }
             .cakes {
                 display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 2rem; margin: 0 2.5rem; margin-bottom: 2rem;
             }
             .cakes article {
-                background: #FCEDE8; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;
+                background: var(--cart-color); border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;
                 padding: 1rem;  position: relative;  overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
             }
             .cakes article img {
@@ -90,14 +107,14 @@ class CartComponent extends HTMLElement {
                 background-color: #FCEDE8;    /* Цайвар хөх дэвсгэр */
             }
             .cakes1 h1 {
-                padding-left: 0.8rem; margin: 0.5rem 0; color: var(--fourth-text-color); font-size: 1rem;  text-align: left;
+                padding-left: 0.8rem; margin: 0.5rem 0; color: var(--text-color); font-size: 1rem;  text-align: left;
             }
             .cakes1 h2 {
-                padding-left: 0.8rem;  margin: 0.2rem 0;  color: var(--secondary-text-color);
+                padding-left: 0.8rem;  margin: 0.2rem 0;  color: var(--text-color);
                 font-size: 0.9rem; text-align: left; font-weight: lighter;
             }
             .cakes1 .price {
-                margin-top: -35px; font-size: 1.1rem;  color: var(--header-color);  font-weight: bold;  text-align: right;
+                margin-top: -35px; font-size: 1.1rem;  color: var(--text-color);  font-weight: bold;  text-align: right;
             }
                 .cart-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
                 .quantity-controls button, .remove-item { cursor: pointer; }
