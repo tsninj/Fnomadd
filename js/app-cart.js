@@ -1,4 +1,3 @@
-//app-cart.js
 import '../wc/Cart.js';
 import { fetchBooksData } from './data.js';
 
@@ -10,5 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     cartComponent.addEventListener('cart-updated', (e) => {
         console.log('Сагс шинэчлэгдсэн:', e.detail);
+        
     });
 });

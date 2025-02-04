@@ -1,4 +1,4 @@
-const API_KEY = "$2a$10$ORMl4/k6nH.Yqy7avMNAZeA0ywZe9owYLpZiKjBesQUcg8g30V0vS";  // jsonbin API master key
+const API_KEY = "$2a$10$ORMl4/k6nH.Yqy7avMNAZeA0ywZe9owYLpZiKjBesQUcg8g30V0vS";  // jsonbin API master key 
 
 export const fetchBooksData = async (URLd) => {
     try {

@@ -18,4 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     cartComponent.addEventListener('cart-updated', (e) => {
         console.log('Сагс шинэчлэгдсэн:', e.detail);
     });
+    
 });
+
