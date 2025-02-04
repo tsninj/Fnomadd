@@ -5,7 +5,17 @@ class BookList extends HTMLElement {
         this.loadState();
         this.initializeFilters();
     }
+    connectedCallback() {
+    }
 
+    disconnectedCallback() {
+    }
+
+    attributeChangedCallback(name, oldVal, newVal) {
+    }
+
+    adoptedCallback() {
+    }
     set books(data) {
         this._books = data;
         this.applyFiltersFromURL();

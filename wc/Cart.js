@@ -14,7 +14,15 @@ class CartComponent extends HTMLElement {
     connectedCallback() {
         this.render();
     }
+    disconnectedCallback() {
+    }
 
+    attributeChangedCallback(name, oldVal, newVal) {
+    }
+
+    adoptedCallback() {
+    }
+    
     render() {
         /*Сагсан дотор бүтээгдэхүүн байхгүй бол нийт үнийг 0 болон сагсан дотор бараа байхгүй байна гэж гаргана.
         */
