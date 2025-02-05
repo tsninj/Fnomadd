@@ -60,6 +60,36 @@
     margin-left: 3rem;
 }
 
+#back-button {
+    background: none;
+    border: none;
+}
+
+#back-button img{
+    width: 30%;
+    height: auto;
+}
+
+cart-component div[slot="cart-footer"] button {
+    margin: 40px auto;
+    display: block;
+    width: 20%;
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+cart-component div[slot="cart-footer"] button:hover {
+    transform: scale(1.05);
+}
+
 /* .cakes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
