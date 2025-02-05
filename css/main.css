@@ -99,8 +99,7 @@ nav ul li a:hover {
 
 
 footer {
-    background-color: var(--bg-color-footer); 
-    color: var(--footer-text-color); 
+    background: linear-gradient(#f8f8f8, #adadad); 
     padding-bottom: 1.5rem; 
     padding: 2rem 1rem;
 
