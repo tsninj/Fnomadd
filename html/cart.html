@@ -35,7 +35,7 @@
         </nav>
     </header>
 
-
+    
     <section class="Sanal">
         <div class="Sentence">
             <h4 class="cart">Сагсалсан зүйлс:</h4>
@@ -43,13 +43,25 @@
             <div id="total-price"></div>
         </div>
     </section>
-
-    <div class="cakes" id="books-container"></div>
-    <cart-component></cart-component>
+    
     <theme-toggle></theme-toggle>
+    <div class="cakes" id="books-container"></div>
+    <cart-component>
+        <div slot="cart-header">
+            <button id="back-button">🔙</button>
+        </div>
+        <div slot="cart-footer">
+            <button >Төлбөр хийх</button>
+        </div>
+    </cart-component>
 
     <script type="module" src="../js/app-cart.js"></script>
-
+    <script>        
+        document.getElementById("back-button").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "../html/Publishing.html"; 
+    });
+    </script>
     <footer>
         <div class="footer-contact">
             <ul>

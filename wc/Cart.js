@@ -31,18 +31,25 @@ class CartComponent extends HTMLElement {
             this.shadowRoot.innerHTML = `
                 <style>
                     .cakes { padding: 10px; font-family: Arial, sans-serif; }
-                    .empty { color: dark-gray; padding-bottom: 15rem ; padding-left:2rem}
+                    .empty { color: dark-gray; padding-bottom: 10rem ; padding-left:5rem; margin-top:-3.2rem }
+                    .price-button { display: flex; justify-content: center; padding-bottom: 2rem}
+                    .back-button {   display: flex; justify-content: left;  padding-bottom: 2rem; margin-top:-2rem}
                 </style>
                 <div class="cakes">
+                    <slot class="back-button" name="cart-header"></slot>
                     <p class="empty">Сагс хоосон байна.</p>
                     <p><span id="total-price"></span></p>
+                    <slot class="price-button" name="cart-footer"></slot>
                 </div>
             `;
             return;
         }
         /* Сагсан дотор байгаа номуудыг Id-ийн тусламжтайгаар рендерлэнэ.
         */
-        let cartHTML = '<div class="cakes">';
+        let cartHTML = `
+        <slot class="back-buttons" name="cart-header"></slot>
+        <div class="cakes">
+    `;
         this.cart.forEach((quantity, id) => {
             const product = this.booksData.find((book) => book.id == id);
             if (product) {
@@ -67,9 +74,12 @@ class CartComponent extends HTMLElement {
 
         document.getElementById('total-price').textContent = `${this.totalPrice.toLocaleString()}₮`;
 
-        cartHTML += '</div>';
+        cartHTML += `</div>
+        <slot name="cart-footer"></slot>
+    `;
 
-        this.shadowRoot.innerHTML = `
+        const template = document.createElement('template');
+        template.innerHTML = `
             <style>
             :host {
                 display: block;
@@ -88,6 +98,9 @@ class CartComponent extends HTMLElement {
                     --text-color: #fff;
                     --cart-color: #222;
             }
+            ::slotted([slot="cart-header"]) {display: flex; justify-content: left; padding-bottom: 2rem; margin-top:-2rem}
+            ::slotted([slot="cart-footer"]) {display: flex; justify-content: center;  padding-bottom: 2rem}
+
             .cakes {
                 display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 2rem; margin: 0 2.5rem; margin-bottom: 2rem;
@@ -127,7 +140,8 @@ class CartComponent extends HTMLElement {
             </style>
             ${cartHTML}
         `;
-
+        this.shadowRoot.innerHTML = "";
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
         /*Бүтээгдэхүүн нэмэх товчлуур*/
         this.shadowRoot.querySelectorAll('.increase').forEach(button => {
             button.addEventListener('click', (event) => {

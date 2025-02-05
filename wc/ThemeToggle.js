@@ -6,23 +6,18 @@ class ThemeToggle extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 button {
-                    cursor: pointer;
-                    padding: 5px 10px;
-                    border: none;
+                    cursor: pointer;  padding: 5px 10px;
+                    border: none; font-size: 1rem;  border-radius: 5px; margin-left: 70rem;
                     background-color: var(--btn-bg);
                     color: var(--btn-text);
-                    font-size: 16px;
-                    border-radius: 5px;
-                    margin-left: 20px;
-                    margin-bottom: 20px;
-                }
+                    }
                 :host-context(html.light-mode) button {
                     --btn-bg: #ddd;
                     --btn-text: #333;
                 }
                 :host-context(html.dark-mode) button {
                     --btn-bg: #333;
-                    --btn-text: --var(bg-color);
+   --btn-text: var(--bg-color);
                 }
             </style>
             <button id="toggle-btn">🌙</button>
