@@ -69,6 +69,13 @@
     width: 30%;
     height: auto;
 }
+/*Dark mode css Shadow DOM дотор байгаа button-ийг this.shadowRoot.innerHTML хэсэг дотор тодорхойлсон байгаа*/
+button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
 cart-component div[slot="cart-footer"] button {
     margin: 40px auto;
