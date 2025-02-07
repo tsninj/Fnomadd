@@ -78,15 +78,6 @@ svg:hover path {
     stroke: #FCEDE8; /* Буцах тэмдэгний өнгө өөрчлөгдөнө */
 }
 
-#back-button {
-    background: none;
-    border: none;
-}
-
-#back-button img{
-    width: 100%;
-    height: auto;
-}
 /*Dark mode css Shadow DOM дотор байгаа button-ийг this.shadowRoot.innerHTML хэсэг дотор тодорхойлсон байгаа*/
 button {
     background: none;
