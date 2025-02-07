@@ -27,52 +27,11 @@ body {
     overflow-x: hidden;
 }
 
-header {
-    
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-nav {
-    background: #FCEDE8;
-    height: 3rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2.5rem;
-}
-
 label.logo {
     color: #4B5563;
     font-size: 1.5rem;
     font-weight: semi;
     font-family: 'Birthstone', cursive;
-}
-
-header nav ul {
-    display: flex;
-    align-items: center;
-    margin: 0 1rem;
-}
-
-header nav ul li {
-    margin: 0 1rem;
-    list-style: none;
-  
-}
-
-header nav ul li a {
-    color: #4B5563;
-    font-size: 0.8rem;
-    padding: 0.3rem 0.5rem;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    color: #fff;
-    transition: 0.3s;
 }
 
 .icons {
@@ -163,12 +122,19 @@ header nav ul li a:hover {
 }
 
 .texts button {
-    border-color: white;
-    background: white;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
+    margin: 40px 0;
+    display: block;
     width: 30%;
-    height: 40px;
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 }
 
  .images {
@@ -325,11 +291,6 @@ header nav ul li a:hover {
     margin-top: -1%;
 }
 
-.Bolgoh article:hover img {
-    transform: scale(1.02); 
-    box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3); 
-    
-}
 
 .Bolgoh .price {
    margin-top: -110px;
@@ -385,10 +346,7 @@ header nav ul li a:hover {
     margin-left: auto;
     margin-right: auto; 
 }
-.cakes article:hover img {
-    transform: scale(1.02); 
-    box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3); 
-}
+
 
 
 .salbar h2 {
@@ -444,24 +402,7 @@ header nav ul li a:hover {
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
 }
 
-footer {
-    background-color: var(--bg-color-footer); 
-    color: var(--footer-text-color); 
-    padding-bottom: 1.5rem;
-}
 
-.footer-contact {
-    padding: 1rem 3rem 2rem ; 
-
-    display: grid;
-    grid-template-columns: 35% 17% 18% 25%;
-    gap: 1.2rem; 
-}
-
-.footer-contact ul {
-    list-style-type: none;
-    padding: 0;
-}
 .footer-contact h3 {
     font-size: 3rem;
     font-weight: bold;
@@ -469,45 +410,7 @@ footer {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
 }
-.footer-contact h4 {
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
 
-.footer-contact li {
-    margin-bottom: 0.5rem; 
-}
-
-.footer-contact a {
-    color: var(--footer-text-color) ;
-    text-decoration: none; 
-    transition: color 0.3s ease;
-    font-size: 0.7rem;
-    padding-right: 0;
-}
-
-.footer-contact a:hover {
-    color: var(--highlight-color); 
-    font-weight: bolder;
-}
-
-.footer-contact img {
-    width: 1rem;
-    height: 1rem;
-    padding: 0rem 1rem 0rem 0rem;
- }
-
-.footer-area {
-    padding: 1rem 3rem ;
-    border-top: 1px solid #444; 
-    font-size: 0.7rem;
-}
-
-.footer-area p {
-
-    color: var(--footer-text-color); 
-}
 @media (max-width: 768px) {
     header nav ul {
         display: none;
