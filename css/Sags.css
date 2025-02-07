@@ -105,10 +105,21 @@ cart-component div[slot="cart-footer"] button:hover {
     font-size: 20px;
 }
 
-.remove-item{
-    background: none;
+.remove-item {
+    position: absolute; /* Элементийг карт дотроо харьцангуй байрлуулна */
+    top: 8px;
+    right: 8px; 
     border: none;
-    font-size: 20px;
+    background: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%; /* Товчийг дугуй болгох */
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 /* .cakes {
