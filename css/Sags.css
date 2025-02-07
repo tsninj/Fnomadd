@@ -78,7 +78,7 @@ button {
 }
 
 cart-component div[slot="cart-footer"] button {
-    margin: 40px auto;
+   margin: 40px auto;
     display: block;
     width: 20%;
     height: auto;
