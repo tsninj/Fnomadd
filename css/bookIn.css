@@ -250,7 +250,10 @@ header nav ul li a:hover {
     padding-top: 1rem;
 }
 
-
+.Sanal .Bolgoh article:hover {
+        transform: scale(1.02); 
+        box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+}
 
 .Sanal h4 { 
     color: var(--primary-text-color); 
