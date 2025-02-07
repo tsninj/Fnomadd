@@ -14,7 +14,7 @@ cart-component {
     height: auto;
 }
 
-.byluu-heseg {
+.section12 {
     background-color: var(--bg-color-1);
     padding-top: 1rem;
 }
@@ -138,7 +138,7 @@ cart-component {
     outline: none;
 }
 
-.cakes {
+.contain {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
@@ -146,7 +146,7 @@ cart-component {
     margin-bottom: 2rem;
 }
 
-.cakes article {
+.contain article {
     background: #FCEDE8;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -157,7 +157,7 @@ cart-component {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.cakes article img {
+.contain article img {
     width: 100%;
     max-width: 9rem;
     height: auto;
@@ -166,7 +166,7 @@ cart-component {
     margin-top: 1rem;
 }
 
-.cakes1 h1 {
+.contain1 h1 {
     padding-left: 0.8rem;
     margin: 0.5rem 0;
     color: var(--fourth-text-color);
@@ -174,7 +174,7 @@ cart-component {
     text-align: left;
 }
 
-.cakes1 h2 {
+.contain1 h2 {
     padding-left: 0.8rem;
     margin: 0.2rem 0;
     color: var(--secondary-text-color);
@@ -183,7 +183,7 @@ cart-component {
     font-weight: lighter;
 }
 
-.cakes1 .price {
+.contain1 .price {
     margin-top: -35px;
     font-size: 1.1rem;
     color: var(--header-color);
@@ -192,7 +192,7 @@ cart-component {
 
 }
 
-.cakes article:hover {
+.contain article:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
@@ -217,7 +217,7 @@ cart-component {
     background-color: #d48806;
 }
 
-.cakes article::after {
+.contain article::after {
     content: '';
     position: absolute;
     top: 0;
@@ -230,11 +230,11 @@ cart-component {
     z-index: 1;
 }
 
-.cakes article:hover::after {
+.contain article:hover::after {
     opacity: 0.9;
 }
 
-.cakes article:hover .add-to-cart {
+.contain article:hover .add-to-cart {
     display: inline-block;
     z-index: 2;
 }
@@ -242,7 +242,7 @@ cart-component {
 
 
 @media (max-width: 1068px) {
-    .cakes {
+    .contain {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 
@@ -252,7 +252,7 @@ cart-component {
 }
 
 @media (max-width: 768px) {
-    .cakes {
+    .contain {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
