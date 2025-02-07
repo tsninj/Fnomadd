@@ -61,6 +61,23 @@
     margin-left: 3rem;
 }
 
+/* Буцах svg inline */
+svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+}
+
+svg path {
+    stroke: #000;
+    stroke-width: 3;
+    transition: stroke 0.3s;
+}
+
+svg:hover path {
+    stroke: #FCEDE8; /* Буцах тэмдэгний өнгө өөрчлөгдөнө */
+}
+
 #back-button {
     background: none;
     border: none;
