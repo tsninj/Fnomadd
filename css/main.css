@@ -15,7 +15,6 @@
     --button-color: #FCEDE8;
     --hover-color: white;
 }
-
 html {
     font-size: 20px;
 }
@@ -97,6 +96,82 @@ nav ul li a:hover {
     padding-right: 2rem;
 }
 
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --bg-color-2: rgba(50, 50, 50, 0.5);
+    --bg-color-footer: #1e1e1e;
+    --text-color: #e0e0e0;
+    --header-bg: #2c2c2c;
+    --secondary-text-color: #b0b0b0;
+    --third-text-color: #a0a0a0;
+    --fourth-text-color: #d0d0d0;
+    --sanal-bg-color: #FCEDE8;
+    --header-color:#d0d0d0;
+    --footer-text-color: #222;
+
+}
+
+/* Toggle Switch */
+.theme-switch {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    width: 40px;
+    height: 20px;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Dark mode active */
+input:checked + .slider {
+    background-color: #4D4D4D;
+}
+
+input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+html:has(#darkModeToggle:checked) {
+    --bg-color: #121212;
+    --bg-color-2: rgba(50, 50, 50, 0.5);
+    --bg-color-footer: #1e1e1e;
+    --text-color: #e0e0e0;
+    --header-bg: #222;
+    --secondary-text-color: #b0b0b0;
+    --third-text-color: #ffffff;
+    --fourth-text-color: #d0d0d0;
+    --sanal-bg-color: #222;
+    --button-color: #e0e0e0;
+    --header-color:#d0d0d0;
+    --footer-text-color: #222;
+
+}
 
 footer {
     background: linear-gradient(#f8f8f8, #adadad); 

@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CoffeeNamu">
-    <title>Coffee Namu</title>
+    <title>Nomin delgerengui</title>
     <link rel="stylesheet" href="../css/bookIn.css">
+    <link rel="stylesheet" href="../css/main.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -14,24 +16,27 @@
 <body>
     <header>
         <nav>
-            <label class="logo">Nomadd</label>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-        
+            <h1>Nomadd</h1>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul>
-                <li><a href="#">Nomadd Lifestyle</a></li>
-                <li><a href="#">Publishing</a></li>
+                <li><a href="../html/Home.html">Nomadd Lifestyle</a></li>
+                <li><a href="../html/Publishing.html">Publishing</a></li>
                 <li><a href="#">Roasting</a></li>
-                <li><a href="#">Coffee Namu</a></li>
-                
+                <li><a href="#">CoffeeNamu</a></li>
             </ul>
-            <ul><li><a href="#">Join Us</a></li></ul>
-            <div class="icons">
-                <i class="fas fa-shopping-cart" aria-label="Shopping Cart"></i>
-                <i class="fas fa-user" aria-label="Login"></i>
+            <ul>
+                <li><a href="#">Join Us</a></li>
+            </ul>
+            <div class="icons" style="margin-right: -11.5rem;">
+
+                <a href="../html/Sags.html"><img src="../images/main/bag.png" alt="Bag"></a>
+                <a href="#"><img src="../images/main/user.png" alt="User"></a>
             </div>
+            <label class="theme-switch" style="margin-right: 2rem;">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label> 
+
         </nav>
     </header>
 
@@ -42,20 +47,23 @@
             </div>
             <div class="texts">
                 <h3>Анна</h3>
-                <p>Энэ ном танд бизнесээ богино хугацаанд хол дээр нь босгож ирэхэд тусална. 
-                    Та аль хэдийн бизнесийн гараагаа эхэлсэн, эсвэл хэзээ мөдгүй эхлүүлэхээр зэхэж буй эсэхээс 
+                <p>Энэ ном танд бизнесээ богино хугацаанд хол дээр нь босгож ирэхэд тусална.
+                    Та аль хэдийн бизнесийн гараагаа эхэлсэн, эсвэл хэзээ мөдгүй эхлүүлэхээр зэхэж буй эсэхээс
                     үл хамааран өөрийн бизнест олон хэрэглэгчийг татах жорыг эл номоос олж авч чадна.</p>
-                
+
                 <p>Шинэ бүтээгдэхүүнийхээ нээлтийг Apple шиг, эсвэл Холливудын том студид шиг хийвэл ямар вэ?
-                    Хүмүүс танай бүтээгдэхүүний худалдаанд гарах өдрийг хоног тоолон хүлээдэг бол яах вэ? 
-                    Зах зээлд нэг ч өрсөлдөгчгүй, дангаар ноёлж чадахуйц хүчирхэг болбол яаж байна? 
-                    Таны бизнес тийм ч том биш, төсөв санхүү тань төсөрхөн байсан ч та энэ бүхнийг хийж чадах бол ямар вэ?
-                     Эдгээр асуултын хариу ердөө нэг аргачлалд бий. Одоо харин эл номоороо дамжуулан та бүхэнтэй хуваалцах гэж байна. 
-                     Энд заах аргачлал маань амьдрал дээр шинээр гаргаж, бизнесээ амжилттай эхлүүлэх арга зам юм.
-                    Нэгэнт л хөлс хөдөлмөрөө зориулахаас хойш хэдийн туршаад баталчихсан арга барилыг дагах нь ашигтай шүү дээ.</p>
-                    <button type="button">Худалдан авах 39,900₮</button>
-                </div>
-            
+                    Хүмүүс танай бүтээгдэхүүний худалдаанд гарах өдрийг хоног тоолон хүлээдэг бол яах вэ?
+                    Зах зээлд нэг ч өрсөлдөгчгүй, дангаар ноёлж чадахуйц хүчирхэг болбол яаж байна?
+                    Таны бизнес тийм ч том биш, төсөв санхүү тань төсөрхөн байсан ч та энэ бүхнийг хийж чадах бол ямар
+                    вэ?
+                    Эдгээр асуултын хариу ердөө нэг аргачлалд бий. Одоо харин эл номоороо дамжуулан та бүхэнтэй
+                    хуваалцах гэж байна.
+                    Энд заах аргачлал маань амьдрал дээр шинээр гаргаж, бизнесээ амжилттай эхлүүлэх арга зам юм.
+                    Нэгэнт л хөлс хөдөлмөрөө зориулахаас хойш хэдийн туршаад баталчихсан арга барилыг дагах нь ашигтай
+                    шүү дээ.</p>
+                <button type="button">Худалдан авах 39,900₮</button>
+            </div>
+
         </div>
     </section>
 
@@ -85,58 +93,59 @@
     </section>
 
 
-    <section class="Sanal">
-        <h4 style="padding-top: 2rem; padding-bottom: 2rem; color: var(--fourth-text-color); justify-self: center;">Санал болгох номнууд<h4>
-        <div class="Bolgoh">
-            <article class="a">
+    <section>
+        <h4 class="bookinheader">Санал болгох номнууд<h4>
+        <div class="Sanal">
+            <article class="Bolgoh">
                 <img src="../images/Publishing/anna.png" alt="Anna">
-                <h3 style="color: black; font-weight: bold;">Анна</h3>
-                <h5 style="color: var(--fourth-text-color);">Эми Одел</h5>
-                
-                <h5 style="padding-bottom: 20px; color: var(--fourth-text-color);" class="category">Уран зохиол</h5>
-                <p class="price">39,900₮</p>
+                <div>
+                    <h1>Анна</h1>
+                    <h2>Эми Одел</h2>
+                    <p class="price">39,900₮</p>
+                </div>
             </article>
-            <article class="a">
+            <article class="Bolgoh">
                 <img src="../images/Publishing/analog.png" alt="Analog">
-                <h3 style="color: black; font-weight: bold;">Аналог эргэн ирсэн нь</h3>
-                <h5 style="color: var(--fourth-text-color);">Жаред Даймонд</h5>
-                <h5 style="padding-bottom: 20px; color: var(--fourth-text-color);" class="category">Уран зохиолын бус</h5>
-                <p class="price">87,800₮</p>
+                <div>
+                    <h1>Аналог эргэн ирсэн нь</h1>
+                    <h2>Жаред Даймонд</h2>
+                    <p class="price">39,900₮</p>
+                </div>
             </article>
-            <article class="a">
+            <article class="Bolgoh">
                 <img src="../images/Publishing/biznes.png" alt="Biznes">
-                <h3 style="color: black; font-weight: bold;">Бизнесийг энгийнээс</h3>
-                <h5 style="color: var(--fourth-text-color);">Доналд Миллер</h5>
-                
-                <h5 style="padding-bottom: 20px; color: var(--fourth-text-color);" class="category">Уран зохиол</h5>
-                <p class="price">87,800₮</p>
+                <div>
+                    <h1>Үүсгэн байгуулагчид</h1>
+                    <h2>Жимми Сонни</h2>
+                    <p class="price">39,900₮</p>
+                </div>
             </article>
-            <article class="a">
+            <article class="Bolgoh">
                 <img src="../images/Publishing/timeplanner.png" alt="Time">
-                <h3 style="color: black; font-weight: bold;">Цаг төлөвлөгч дэвтэр</h3>
-                <h5 style="color: var(--fourth-text-color);">Кел Ньюпорт</h5>
-                
-                <h5 style="padding-bottom: 20px; color: var(--fourth-text-color);" class="category">Уран зохиол</h5>
-                <p class="price">34,900₮</p>
+                <div>
+                    <h1>Цаг төлөвлөгч дэвтэр</h1>
+                    <h2>Кел Ньюпорт</h2>
+                    <p class="price">34,900₮</p>
+                </div>
             </article>
         </div>
 
     </section>
 
-    
+
     <footer>
         <div class="footer-contact">
             <ul>
                 <li>
-                    <h3>
+                    <h1>
                         nomadd
-                    </h3>
+                    </h1>
                 </li>
             </ul>
 
             <ul>
                 <li>
-                    <h4>COMPANY</h4>
+                    <h2>COMPANY</h2>
                 </li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Legal Information</a></li>
@@ -145,7 +154,7 @@
             </ul>
             <ul>
                 <li>
-                    <h4>HELP CENTER</h4>
+                    <h2>HELP CENTER</h2>
                 </li>
                 <li><a href="#">Find a Property</a></li>
                 <li><a href="#">How to Host</a></li>
@@ -156,14 +165,16 @@
 
             <ul>
                 <li>
-                    <h4>CONTACT INFO</h4>
+                    <h2>CONTACT INFO</h2>
                 </li>
                 <li><a href="tel:+123456789">Phone: 1234567890</a></li>
                 <li><a href="mailto:m.bluth@example.com">Email: company@email.com</a></li>
                 <li><a href="https://www.google.com/maps"> Location: 100 Smart Street, LA, USA</a></li>
-                <li><a href="https://www.facebook.com/"><img src="../images/Publishing/fb.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/"><img src="../images/Publishing/ig-removebg-preview.png" alt="Instagram"></a>
-                <a href="https://www.twitter.com"><img src="../images/Publishing/x.png" alt="X"></a></li>
+                <li><a href="https://www.facebook.com/"><img src="../images/main/fb.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/"><img src="../images/main/ig-removebg-preview.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.twitter.com"><img src="../images/main/x.png" alt="X"></a>
+                </li>
             </ul>
         </div>
         <div class="footer-area">
