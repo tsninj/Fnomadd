@@ -239,13 +239,63 @@ cart-component {
     z-index: 2;
 }
 
+.salbar h2 {
+    padding-top: 1rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
 
+.salbariin-medeelel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.7rem;
+    margin: 0 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.salbariin-medeelel article {
+    display: flex;
+    flex-direction: column;
+    align-items: left; 
+    padding: 3rem;
+}
+
+.salbariin-medeelel article h3 {
+    padding-top: 0.8rem;
+    color: var(--text-color);
+    font-weight: medium;
+    margin: 0.5rem 0;
+}
+
+.salbariin-medeelel p {
+    color: var(--fourth-text-color);
+    font-weight: normal; 
+    margin-top: 0;
+    font-size: 0.7rem;
+}
+
+.salbariin-medeelel img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.salbariin-medeelel article:hover img {
+    transform: scale(1.02);
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+}
 
 @media (max-width: 1068px) {
     .contain {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
-
+    .salbariin-medeelel {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
     .search-container input {
         margin-left: 4rem;
     }
@@ -259,5 +309,7 @@ cart-component {
     .search-container input {
         margin-left: 3rem;
     }
-
+    .salbariin-medeelel {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
