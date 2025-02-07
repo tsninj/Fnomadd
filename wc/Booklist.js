@@ -30,7 +30,7 @@ class BookList extends HTMLElement {
         }
 
         booksContainer.innerHTML = filteredBooks.map((book) => `
-            <article class="cakes1" id="book-${book.id}">
+            <article class="contain1" id="book-${book.id}">
                 <img src="${book.image}" alt="${book.title}">
                 <div>
                     <h1>${book.title}</h1>
