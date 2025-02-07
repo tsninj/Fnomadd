@@ -63,7 +63,7 @@ abel.logo {
     
 }
 
-.texts h3 {
+.texts h1 {
     font-size: 20px;
 }
 
@@ -241,7 +241,7 @@ abel.logo {
     padding: 1rem; 
 }
 
-.contain article h3 {
+.contain article h2 {
     justify-self: center;
     font-size: 20px;
     padding-top: 0.8rem;
