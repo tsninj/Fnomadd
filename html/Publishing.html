@@ -42,7 +42,7 @@
     </section>
 
 
-    <section class="byluu-heseg">
+    <section class="section12">
         <div class="search-container">
             <h2 href="#">← Номнууд</h2>
             <input type="text" id="search-bar" placeholder="Search " />
@@ -59,7 +59,7 @@
             </select>
         </div>
 
-        <div class="cakes" id="books-container"></div>
+        <div class="contain" id="books-container"></div>
     </section>
 
     <book-list></book-list>
@@ -69,7 +69,7 @@
     <script>
         document.getElementById("search-bar").addEventListener("input", function (event) {
             const query = event.target.value.toLowerCase(); // Хайх текстийг жижиг үсгээр хувиргах
-            const articles = document.querySelectorAll(".cakes article"); // Бүх номнуудыг олох
+            const articles = document.querySelectorAll(".contain article"); // Бүх номнуудыг олох
 
             articles.forEach(function (article) {
                 const bookTitle = article.querySelector("h1").textContent.toLowerCase(); // Номны нэрийг жижиг үсгээр авах
