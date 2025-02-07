@@ -41,7 +41,23 @@ class BookList extends HTMLElement {
             </article>
         `).join("");
 
+        this.addNavigationEventListeners();
         this.addCartEventListeners();
+    }
+    
+    // Дарах үйлдэл хийвэл шууд bookin.html очих
+    addNavigationEventListeners() {
+        document.querySelectorAll(".contain1").forEach((article) => {
+            
+            article.addEventListener("click", (event) => {
+                // сагс руу хийх үйлдэлд саад болгохгүй 
+                if (event.target.classList.contains("add-to-cart")) {
+                    event.stopPropagation();
+                    return;
+                }
+                window.location.href = `bookIn.html`;
+            });
+        });
     }
     /* Сагсанд нэмэх товчлуур буюу номыг id-аар нь олж customevent үүсгэн мэдэгдэл гаргана.
     */

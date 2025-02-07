@@ -32,7 +32,8 @@ class CartComponent extends HTMLElement {
                 <style>
                     .contain { padding: 10px; font-family: Arial, sans-serif; }
                     .empty { color: dark-gray; padding-bottom: 10rem ; padding-left:5rem; margin-top:-3.2rem }
-                    .price-button { display: flex; justify-content: center; padding-bottom: 2rem}
+                    .price-button {  display: block; width: 100%;
+}
                     .back-button {   display: flex; justify-content: left;  padding-bottom: 2rem; margin-top:-2rem}
                 </style>
                 <div class="contain">
