@@ -30,12 +30,12 @@ class CartComponent extends HTMLElement {
         if (this.cart.size === 0) {
             this.shadowRoot.innerHTML = `
                 <style>
-                    .cakes { padding: 10px; font-family: Arial, sans-serif; }
+                    .contain { padding: 10px; font-family: Arial, sans-serif; }
                     .empty { color: dark-gray; padding-bottom: 10rem ; padding-left:5rem; margin-top:-3.2rem }
                     .price-button { display: flex; justify-content: center; padding-bottom: 2rem}
                     .back-button {   display: flex; justify-content: left;  padding-bottom: 2rem; margin-top:-2rem}
                 </style>
-                <div class="cakes">
+                <div class="contain">
                     <slot class="back-button" name="cart-header"></slot>
                     <p class="empty">Сагс хоосон байна.</p>
                     <p><span id="total-price"></span></p>
@@ -48,13 +48,13 @@ class CartComponent extends HTMLElement {
         */
         let cartHTML = `
         <slot class="back-buttons" name="cart-header"></slot>
-        <div class="cakes">
+        <div class="contain">
     `;
         this.cart.forEach((quantity, id) => {
             const product = this.booksData.find((book) => book.id == id);
             if (product) {
                 cartHTML += `
-                    <article class="cakes1" id="book-${product.id}">
+                    <article class="contain1" id="book-${product.id}">
                         <img src="${product.image}" alt="${product.title}">
                         <div>
                             <h1>${product.title}</h1>
@@ -101,32 +101,32 @@ class CartComponent extends HTMLElement {
             ::slotted([slot="cart-header"]) {display: flex; justify-content: left; padding-bottom: 2rem; margin-top:-2rem}
             ::slotted([slot="cart-footer"]) {display: flex; justify-content: center;  padding-bottom: 2rem}
 
-            .cakes {
+            .contain {
                 display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 2rem; margin: 0 2.5rem; margin-bottom: 2rem;
             }
-            .cakes article {
+            .contain article {
                 background: var(--cart-color); border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;
                 padding: 1rem;  position: relative;  overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
             }
-            .cakes article img {
+            .contain article img {
                 width: 100%;  max-width: 9rem;  height: auto;  margin-bottom: 0.5rem;  border-radius: 5px;  margin-top: 1rem;
             }
-            .cakes1 {
+            .contain1 {
                 border: 2px solid transparent;  transition: border 0.3s;
             }
-            .cakes1.selected {
+            .contain1.selected {
                 border: 2px solid #007bff;    /* Хөх өнгийн хүрээ */
                 background-color: #FCEDE8;    /* Цайвар хөх дэвсгэр */
             }
-            .cakes1 h1 {
+            .contain1 h1 {
                 padding-left: 0.8rem; margin: 0.5rem 0; color: var(--text-color); font-size: 1rem;  text-align: left;
             }
-            .cakes1 h2 {
+            .contain1 h2 {
                 padding-left: 0.8rem;  margin: 0.2rem 0;  color: var(--text-color);
                 font-size: 0.9rem; text-align: left; font-weight: lighter;
             }
-            .cakes1 .price {
+            .contain1 .price {
                 margin-top: -35px; font-size: 1.1rem;  color: var(--text-color);  font-weight: bold;  text-align: right;
             }
                 .cart-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
