@@ -182,35 +182,54 @@ header nav ul li a:hover {
     padding: 0.2rem 2rem;
 }
 
-@keyframes shake {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-5px);
-    }
-    50% {
-      transform: translateX(5px);
-    }
-    75% {
-      transform: translateX(-5px);
-    }
-  }
-  
-  .Logos img {
-    grid-column: 2;
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    animation: shake 1.5s infinite; 
-    transition: transform 0.3s ease; 
-  }
-  
-  .Logos img.active {
-    transform: scale(1.5);
-  }
+.Logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px; /* Контейнерийн өндөр */
+    position: relative;
+}
+
+.orbit {
+    width: 250px; /* Тойргийн хэмжээ */
+    height: 250px;
+    position: relative;
+}
+
+.orbit img {
+    position: absolute;
+    width: №150px; /* Логонуудын хэмжээ */
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Логонуудыг тойргийн 4 байрлалд жигд байршуулах */
+.orbit img:nth-child(1) { top: 10%; left: 50%; transform: translate(-50%, -50%); animation: orbit1 8s linear infinite; }
+.orbit img:nth-child(2) { top: 50%; left: 90%; transform: translate(-50%, -50%); animation: orbit2 8s linear infinite; }
+.orbit img:nth-child(3) { top: 90%; left: 50%; transform: translate(-50%, -50%); animation: orbit3 8s linear infinite; }
+.orbit img:nth-child(4) { top: 50%; left: 10%; transform: translate(-50%, -50%); animation: orbit4 8s linear infinite; }
+
+/* Логонууд тусдаа тойрог замаар хөдөлнө */
+@keyframes orbit1 {
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateY(-20px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateY(-20px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+    0% { transform: translate(-50%, -50%) rotate(90deg) translateY(-20px) rotate(-90deg); }
+    100% { transform: translate(-50%, -50%) rotate(450deg) translateY(-20px) rotate(-450deg); }
+}
+
+@keyframes orbit3 {
+    0% { transform: translate(-50%, -50%) rotate(180deg) translateY(-20px) rotate(-180deg); }
+    100% { transform: translate(-50%, -50%) rotate(540deg) translateY(-20px) rotate(-540deg); }
+}
+
+@keyframes orbit4 {
+    0% { transform: translate(-50%, -50%) rotate(270deg) translateY(-20px) rotate(-270deg); }
+    100% { transform: translate(-50%, -50%) rotate(630deg) translateY(-20px) rotate(-630deg); }
+}
 
 @media (max-width: 768px) {
     header nav ul {
