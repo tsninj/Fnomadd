@@ -17,3 +17,5 @@
 
 <p>18-60 нас: Худалдан авалт хийх боломжтой мөн онлайн орчинд веб ашиглах чадвартай</p>
 
+<p style="color=blue;">Figma link: https://www.figma.com/design/O3uYorWHJg7WZ64sqKCsf8/Untitled?node-id=680-1381&t=XMn4nodAQB9OFkJh-1</p>
+
