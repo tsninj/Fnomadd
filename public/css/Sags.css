@@ -1,0 +1,254 @@
+:root {
+    --search-color: #f39c12;
+    --search-bar: #ccc;
+    --filter-color: #f4f4f4;
+    --bg-color: #FDFBF7;
+}
+.menu img {
+    width: 100%;
+    height: auto;
+}
+
+.section12 {
+    background-color: var(--bg-color-1);
+    padding-top: 1rem;
+}
+
+.Sentence {
+    display: flex;
+    gap: 70%;
+    background-color: var(--bg-color);
+    margin-top: 2rem;
+}
+
+.Sentence p {
+    white-space: nowrap;
+    margin-top: 0.5rem;
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+}
+
+.Sentence button {
+    margin-top: -200px;
+    display: block;
+    width: 100%;
+    height: 50%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+.Sentence button:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.Sanal {
+    background-color: white;
+    padding-top: -3rem;
+}
+
+#total-price{
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+/* Буцах svg inline */
+svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+}
+
+svg path {
+    stroke: #000;
+    stroke-width: 3;
+    transition: stroke 0.3s;
+}
+
+svg:hover path {
+    stroke: #FCEDE8; /* Буцах тэмдэгний өнгө өөрчлөгдөнө */
+}
+
+/*Dark mode css Shadow DOM дотор байгаа button-ийг this.shadowRoot.innerHTML хэсэг дотор тодорхойлсон байгаа*/
+button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+cart-component div[slot="cart-footer"] button {
+   margin: 40px auto;
+    display: block;
+    width: 20%;
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+cart-component div[slot="cart-footer"] button:hover {
+    transform: scale(1.05);
+}
+
+/* - X + styling*/
+.quantity-controls{
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.remove-item {
+    position: absolute; /* Элементийг карт дотроо харьцангуй байрлуулна */
+    top: 8px;
+    right: 8px; 
+    border: none;
+    background: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%; /* Товчийг дугуй болгох */
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* .contain {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contain article {
+    background: #FCEDE8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contain article img {
+    width: 100%;
+    max-width: 9rem;
+    height: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.contain1 {
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.contain1.selected {
+    border: 2px solid #007bff; 
+    // Хөх өнгийн хүрээ 
+    background-color: #FCEDE8; 
+    // Цайвар хөх дэвсгэр 
+}
+
+.contain1 h1 {
+    padding-left: 0.8rem;
+    margin: 0.5rem 0;
+    color: var(--fourth-text-color);
+    font-size: 1rem;
+    text-align: left;
+}
+
+.contain1 h2 {
+    padding-left: 0.8rem;
+    margin: 0.2rem 0;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.contain1 .price {
+    margin-top: -35px;
+    font-size: 1.1rem;
+    color: var(--header-color);
+    font-weight: bold;
+    text-align: right;
+
+} 
+
+.contain1:hover::after {
+    opacity: 0.9;
+}
+
+.contain1:hover .add-to-cart {
+    display: inline-block;
+    z-index: 2;
+}
+
+
+ .quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.quantity-control button:hover {
+    background-color: #eaeaea;
+}  */
+
+.cart {
+    padding-top: 2rem;
+    color: var(--fourth-text-color);
+    justify-self: left;
+    margin-left: 3rem;
+}
+@media (max-width: 1068px) {
+    .contain {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .search-container input {
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contain {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .search-container input {
+        margin-left: 3rem;
+    }
+
+}

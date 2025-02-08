@@ -1,0 +1,198 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Nomadd API",
+    "description": "API documentation for the Nomadd",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "schemes": ["http"],
+  "paths": {
+    "/books": {
+      "get": {
+        "summary": "Get all books",
+        "description": "Retrieve a list of all available books",
+        "responses": {
+          "200": {
+            "description": "A list of books"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new book",
+        "description": "Add a new book to the collection",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "book",
+            "description": "Book object to be added",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "author": { "type": "string" },
+                "genre": { "type": "string" },
+                "price": { "type": "number" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Book added successfully"
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "put": {
+        "summary": "Update book information",
+        "description": "Modify details of an existing book",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "description": "Book ID"
+          },
+          {
+            "in": "body",
+            "name": "book",
+            "description": "Updated book object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "author": { "type": "string" },
+                "genre": { "type": "string" },
+                "price": { "type": "number" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a book",
+        "description": "Remove a book from the collection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "description": "Book ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book deleted successfully"
+          }
+        }
+      }
+    },
+    "/cart": {
+      "get": {
+        "summary": "Get all cart items",
+        "description": "Retrieve all items in the cart",
+        "responses": {
+          "200": {
+            "description": "List of cart items"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add an item to the cart",
+        "description": "Add a book to the cart",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cartItem",
+            "description": "Book item to add",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bookId": { "type": "string" },
+                "quantity": { "type": "integer" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Item added to cart"
+          }
+        }
+      }
+    },
+    "/cart/{id}": {
+      "delete": {
+        "summary": "Remove an item from the cart",
+        "description": "Remove a specific book from the cart",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "description": "Cart item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item removed from cart"
+          }
+        }
+      }
+    },
+    "/cart/increase/{id}": {
+      "put": {
+        "summary": "Increase quantity of a cart item",
+        "description": "Increase the quantity of a book in the cart",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "description": "Cart item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Quantity increased"
+          }
+        }
+      }
+    },
+    "/cart/decrease/{id}": {
+      "put": {
+        "summary": "Decrease quantity of a cart item",
+        "description": "Decrease the quantity of a book in the cart",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "description": "Cart item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Quantity decreased"
+          }
+        }
+      }
+    }
+  }
+}
